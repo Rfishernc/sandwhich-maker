@@ -1,4 +1,5 @@
 import {setMeat} from '../comp/meat';
+import {writeToDom} from '../helper/util.js';
 
 function postLoad() {
     let data = JSON.parse(this.responseText);
