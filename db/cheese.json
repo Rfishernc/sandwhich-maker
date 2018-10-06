@@ -1,0 +1,22 @@
+{
+    "Cheese": [
+        {
+            "Cheddar": "1.50"
+        },
+        {
+            "American": "1"
+        },
+        {
+            "Gouda": "2.25"
+        },
+        {
+            "Swiss": "1.75"
+        },
+        {
+            "Provologne": "1.25"
+        },
+        {
+            "Meunster": "2"
+        }
+    ]
+}

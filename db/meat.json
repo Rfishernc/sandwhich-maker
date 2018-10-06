@@ -1,0 +1,22 @@
+{
+    "Meat": [
+        {
+            "Ham": "2.50"
+        },
+        {
+            "Turkey": "1.75"
+        },
+        {
+            "Roast Beef": "2.75"
+        },
+        {
+            "Proscioto": "3"
+        },
+        {
+            "Capacola": "3.25"
+        },
+        {
+            "Corned Beef": "2"
+        }
+    ]
+}

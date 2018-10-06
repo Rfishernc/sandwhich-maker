@@ -1,0 +1,22 @@
+{
+    "Condiments": [
+        {
+            "Ketchup": "0.25"
+        },
+        {
+            "Mustard": "0.25"
+        },
+        {
+            "Spicy Mustard": "0.50"
+        },
+        {
+            "Mayonnaise": "0.25"
+        },
+        {
+            "Hot Sauce": "0.25"
+        },
+        {
+            "Relish": "0.50"
+        }
+    ]
+}
