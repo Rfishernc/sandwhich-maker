@@ -8,12 +8,15 @@ function addToDom(div, string) {
 
 function domBuilder(category) {
     let string = '';
-    string +=   `<div id=${category}>`
-    string +=       `<`
-    string +=
-    string +=
-    string +=
-    string +=   `</div>`
+    string +=   `<div class='category'>`
+    string +=       `<button class='menuButt'>${category[0]}</button>`
+    string +=       `<div class='scrolloverDiv>`
+    for(let i = 1; i < category.length; i++) {
+        string +=           `<button>${category[Object.keys(category)[i]]}</button>`
+    }
+    string +=       `</div>`
+    string +=   `</div>`;
+    writeToDom('categoriesDiv', string);
 }
 
 function ingredientEvent() {
@@ -36,4 +39,4 @@ function categoryEvent() {
     return category;
 }
 
-export {writeToDom, addToDom, ingredientEvent, categoryEvent};
+export {writeToDom, addToDom, ingredientEvent, categoryEvent, domBuilder};
