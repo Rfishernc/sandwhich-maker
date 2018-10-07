@@ -6,8 +6,8 @@ function getCondiments() {
     return condiments;
 }
 
-function setCondiments() {
-    condiments = arguments;
+function setCondiments(list) {
+    condiments = list;
 }
 
 export {getCondiments, setCondiments};

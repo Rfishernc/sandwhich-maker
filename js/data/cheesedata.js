@@ -1,10 +1,11 @@
 import {setCheese, getCheese} from '../comp/cheese.js';
-import {writeToDom, domBuilder} from '../helper/util.js';
+import {writeToDom, domBuilder, menu} from '../helper/util.js';
 
 function postLoad() {
     let data = JSON.parse(this.responseText);
     setCheese(data.Cheese);
-    domBuilder(getCheese);
+    domBuilder(getCheese());
+    menu();
 }
 
 function postFail() {

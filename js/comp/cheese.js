@@ -6,8 +6,8 @@ function getCheese() {
     return cheese;
 }
 
-function setCheese() {
-    cheese = arguments;
+function setCheese(list) {
+    cheese = list;
 }
 
 export {getCheese, setCheese};

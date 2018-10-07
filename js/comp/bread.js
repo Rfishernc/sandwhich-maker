@@ -2,12 +2,12 @@ import {writeToDom} from '../helper/util.js';
 
 let bread;
 
-function getBread() {
-    return bread;
+function setBread(list) {
+    bread = list;
 }
 
-function setBread() {
-    bread = arguments;
+function getBread() {
+    return bread;
 }
 
 export {getBread, setBread};

@@ -6,23 +6,44 @@ function addToDom(div, string) {
     document.getElementById(div).innerHTML += string;
 }
 
+let id = '';
+
+function setId(cat) {
+    id=cat[0];
+}
+
+function getId() {
+    return id;
+}
+
 function domBuilder(category) {
     let string = '';
-    string +=   `<div class='category'>`
-    string +=       `<button class='menuButt'>${category[0]}</button>`
-    string +=       `<div class='scrolloverDiv>`
+    setId(category);
+    string +=   `<div class='category' id='${category[0]}Container'>`
+    string +=       `<button class='menuButt' id='${category[0]}Butt'>${category[0]}</button>`
+    string +=       `<div class='scrollOverDiv' id='${id}Scroll'>`
     for(let i = 1; i < category.length; i++) {
         string +=           `<button>${category[Object.keys(category)[i]]}</button>`
     }
     string +=       `</div>`
     string +=   `</div>`;
-    writeToDom('categoriesDiv', string);
+    addToDom('categoriesDiv', string);
+}
+
+function menu() {
+    getId();
+    document.getElementById(id+'Butt').addEventListener('mouseover', function() {
+        document.getElementById(id+'Scroll').classList.toggle('show');
+    });
+    document.getElementById(id+'Container').addEventListener('mouseout', function() {
+        document.getElementById(id+'Scroll').classList.toggle('show');
+    });
 }
 
 function ingredientEvent() {
-    document.getElementById('categoriesDiv').addEventListener('mouseup', function() {
-        let ingredient;
-        if(event.target.className.contains('ingredient') === true) {
+    let ingredient;
+    document.getElementById('categoriesDiv').addEventListener('mouseup', function() {  
+        if(event.target.classList.contains('ingredient') === true) {
             ingredient = event.target.id;
         }
     })
@@ -30,13 +51,13 @@ function ingredientEvent() {
 }
 
 function categoryEvent() {
-    document.getElementById('categoriesDiv').addEventListener('mouseup', function() {
-        let category;
-        if(event.target.className.contains('ingredient') === true) {
+    let category;
+    document.getElementById('categoriesDiv').addEventListener('mouseup', function() { 
+        if(event.target.classList.contains('ingredient') === true) {
             category = event.target.parentNode.id;
         }
     })
     return category;
 }
 
-export {writeToDom, addToDom, ingredientEvent, categoryEvent, domBuilder};
+export {writeToDom, addToDom, ingredientEvent, categoryEvent, domBuilder, menu, getId};

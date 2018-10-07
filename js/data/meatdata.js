@@ -1,10 +1,11 @@
-import {setMeat, getMeat} from '../comp/meat';
-import {writeToDom, domBuilder} from '../helper/util.js';
+import {setMeat, getMeat} from '../comp/meat.js';
+import {writeToDom, domBuilder, menu, getId} from '../helper/util.js';
 
 function postLoad() {
     let data = JSON.parse(this.responseText);
     setMeat(data.Meat);
     domBuilder(getMeat());
+    menu();
 }
 
 function postFail() {

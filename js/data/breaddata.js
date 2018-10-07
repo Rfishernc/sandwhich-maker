@@ -1,10 +1,11 @@
 import {setBread, getBread} from '../comp/bread.js';
-import {writeToDom, domBuilder} from '../helper/util.js';
+import {writeToDom, domBuilder, menu} from '../helper/util.js';
 
 function postLoad() {
     let data = JSON.parse(this.responseText);
     setBread(data.Bread);
-    domBuilder(getBread);
+    domBuilder(getBread());
+    menu();
 }
 
 function postFail() {

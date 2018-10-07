@@ -6,8 +6,8 @@ function getVeggies() {
     return veggies;
 }
 
-function setVeggies() {
-    veggies = arguments;
+function setVeggies(list) {
+    veggies = list;
 }
 
 export {getVeggies, setVeggies};

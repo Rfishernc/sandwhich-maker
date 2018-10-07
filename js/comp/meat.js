@@ -6,8 +6,8 @@ function getMeat() {
     return meat;
 }
 
-function setMeat() {
-    meat = arguments;
+function setMeat(list) {
+    meat = list;
 }
 
 export {getMeat, setMeat};

@@ -1,10 +1,11 @@
-import {setVeggies, getVeggies} from '../comp/veggies';
-import {writeToDom, domBuilder} from '../helper/util.js';
+import {setVeggies, getVeggies} from '../comp/veggies.js';
+import {writeToDom, domBuilder, menu} from '../helper/util.js';
 
 function postLoad() {
     let data = JSON.parse(this.responseText);
     setVeggies(data.Veggies);
-    domBuilder(getVeggies);
+    domBuilder(getVeggies());
+    menu();
 }
 
 function postFail() {

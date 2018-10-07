@@ -1,0 +1,13 @@
+.category {
+    position: relative;
+    display: block;
+}
+
+.scrollOverDiv {
+    display: none;
+    position: absolute;
+}
+
+.show {
+    display: inline;
+}
