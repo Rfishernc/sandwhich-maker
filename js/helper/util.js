@@ -23,7 +23,8 @@ function domBuilder(category) {
     string +=       `<button class='menuButt' id='${category[0]}Butt'>${category[0]}</button>`
     string +=       `<div class='scrollOverDiv' id='${id}Scroll'>`
     for(let i = 1; i < category.length; i++) {
-        string +=           `<button>${category[Object.keys(category)[i]]}</button>`
+        let key = Object.keys(category[i]);
+        string +=           `<button>${key}</button>`
     }
     string +=       `</div>`
     string +=   `</div>`;
