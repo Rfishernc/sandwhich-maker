@@ -1,11 +1,12 @@
 import {setCondiments, getCondiments} from '../comp/condiments.js';
-import {writeToDom, domBuilder, menu} from '../helper/util.js';
+import {writeToDom, domBuilder, menu, setButtList, getButtList} from '../helper/util.js';
 
 function postLoad() {
     let data = JSON.parse(this.responseText);
     setCondiments(data.Condiments);
+    setButtList(data.Condiments);
     domBuilder(getCondiments());
-    menu();
+    menu(getButtList());
 }
 
 function postFail() {

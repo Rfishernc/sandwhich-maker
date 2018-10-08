@@ -6,22 +6,22 @@ function addToDom(div, string) {
     document.getElementById(div).innerHTML += string;
 }
 
-let id = '';
+let buttList = [];
 
-function setId(cat) {
-    id=cat[0];
+function setButtList(category) {
+    console.log(buttList);
+    buttList.push(category[0]);   
 }
 
-function getId() {
-    return id;
+function getButtList() {
+    return buttList;
 }
 
 function domBuilder(category) {
     let string = '';
-    setId(category);
     string +=   `<div class='category' id='${category[0]}Container'>`
     string +=       `<button class='menuButt' id='${category[0]}Butt'>${category[0]}</button>`
-    string +=       `<div class='scrollOverDiv' id='${id}Scroll'>`
+    string +=       `<div class='scrollOverDiv' id='${category[0]}Scroll'>`
     for(let i = 1; i < category.length; i++) {
         let key = Object.keys(category[i]);
         string +=           `<button>${key}</button>`
@@ -31,14 +31,15 @@ function domBuilder(category) {
     addToDom('categoriesDiv', string);
 }
 
-function menu() {
-    getId();
-    document.getElementById(id+'Butt').addEventListener('mouseover', function() {
-        document.getElementById(id+'Scroll').classList.toggle('show');
-    });
-    document.getElementById(id+'Container').addEventListener('mouseout', function() {
-        document.getElementById(id+'Scroll').classList.toggle('show');
-    });
+function menu(buttlist) {
+    for(let i = 0; i < buttList.length; i++) {    
+        document.getElementById(buttlist[i]+'Butt').addEventListener('mouseover', function() {
+            document.getElementById(buttlist[i]+'Scroll').classList.toggle('show');
+        });
+        document.getElementById(buttlist[i]+'Container').addEventListener('mouseout', function() {
+            document.getElementById(buttlist[i]+'Scroll').classList.toggle('show');
+        });
+    }
 }
 
 function ingredientEvent() {
@@ -61,4 +62,4 @@ function categoryEvent() {
     return category;
 }
 
-export {writeToDom, addToDom, ingredientEvent, categoryEvent, domBuilder, menu, getId};
+export {writeToDom, addToDom, ingredientEvent, categoryEvent, domBuilder, menu, setButtList, getButtList};

@@ -7,10 +7,10 @@ import { ingredientEvent, categoryEvent } from "./helper/util.js";
 
 function init() {
     breadGetter();
-    // cheeseGetter();
-    // condimentsGetter();
-    // meatGetter(); 
-    // veggiesGetter();
+    cheeseGetter();
+    condimentsGetter();
+    meatGetter(); 
+    veggiesGetter();
     ingredientEvent();
     categoryEvent();
 }
