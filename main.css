@@ -1,0 +1,25 @@
+.category {
+    position: relative;
+    display: block;
+}
+
+.scrollOverDiv {
+    display: none;
+    position: absolute;
+    width: 80%;
+}
+
+.show {
+    display: inline;
+}
+
+.menuButt {
+    width: 100px;
+    margin-bottom: 1%;
+}
+
+.scrollButt {
+    width: 120px;
+    margin-bottom: 1%;
+    margin-left: 1%;
+}

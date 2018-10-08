@@ -1,9 +1,12 @@
-import {setCondiments} from '../comp/condiments';
-import {writeToDom} from '../helper/util.js';
+import {setCondiments, getCondiments} from '../comp/condiments.js';
+import {writeToDom, domBuilder, menu, setButtList, getButtList} from '../helper/util.js';
 
 function postLoad() {
     let data = JSON.parse(this.responseText);
-    setBread(data.Condiments);
+    setCondiments(data.Condiments);
+    setButtList(data.Condiments);
+    domBuilder(getCondiments());
+    menu(getButtList());
 }
 
 function postFail() {
@@ -14,7 +17,7 @@ function condimentsGetter() {
     let request = new XMLHttpRequest();
     request.addEventListener('load', postLoad);
     request.addEventListener('error', postFail);
-    request.open('GET', './db/condiments.json');
+    request.open('GET', '../db/condiments.json');
     request.send();
 }
 
